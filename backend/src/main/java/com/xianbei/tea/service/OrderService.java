@@ -89,8 +89,15 @@ public class OrderService {
         order.setDeliveryFee(req.getDeliveryFee() != null ? req.getDeliveryFee() : BigDecimal.ZERO);
         order.setStatus("PENDING");
 
-        long todayCount = orderRepository.countTodayOrders();
-        order.setOrderNo("A" + String.format("%03d", todayCount + 1));
+        String lastNo = orderRepository.findLastOrderNo();
+        int nextNum = 1;
+        if (lastNo != null) {
+            try { nextNum = Integer.parseInt(lastNo.substring(1)) + 1; } catch (Exception ignored) {}
+        }
+        while (orderRepository.findByOrderNo("A" + String.format("%03d", nextNum)).isPresent()) {
+            nextNum++;
+        }
+        order.setOrderNo("A" + String.format("%03d", nextNum));
 
         List<OrderItem> items = req.getItems().stream().map(itemReq -> {
             Boolean isCombo = itemReq.getIsCombo() != null && itemReq.getIsCombo();

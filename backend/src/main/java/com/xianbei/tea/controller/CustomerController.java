@@ -97,8 +97,8 @@ public class CustomerController {
 
     @GetMapping("/products")
     public Result<List<Product>> products(@RequestParam(required = false) Long categoryId) {
-        if (categoryId != null) return Result.success(productRepository.findByCategoryIdAndStatus(categoryId, 1));
-        return Result.success(productRepository.findByStatus(1));
+        if (categoryId != null) return Result.success(productRepository.findByCategoryId(categoryId));
+        return Result.success(productRepository.findAll());
     }
 
     @GetMapping("/addons")

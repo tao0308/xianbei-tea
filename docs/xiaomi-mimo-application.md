@@ -88,7 +88,7 @@
 
 ### 3. GitHub 项目链接
 
-[此处放置 GitHub 链接]
+**https://github.com/tao0308/xianbei-tea**
 
 ### 4. 产品演示
 

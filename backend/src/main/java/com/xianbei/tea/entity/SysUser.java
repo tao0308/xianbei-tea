@@ -30,7 +30,7 @@ public class SysUser {
     @Column(nullable = false)
     private Integer status = 1;
 
-    @Column(name = "avatar_url", length = 500)
+    @Column(name = "avatar_url", columnDefinition = "TEXT")
     private String avatarUrl;
 
     @Column(length = 100)

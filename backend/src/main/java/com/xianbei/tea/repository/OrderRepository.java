@@ -18,6 +18,9 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     @Query("SELECT COUNT(o) FROM Order o WHERE o.createdAt >= CURRENT_DATE")
     long countTodayOrders();
 
+    @Query("SELECT o.orderNo FROM Order o WHERE o.orderNo LIKE 'A%' ORDER BY o.id DESC LIMIT 1")
+    String findLastOrderNo();
+
     Optional<Order> findByOrderNo(String orderNo);
 
     @Query("SELECT o FROM Order o LEFT JOIN FETCH o.items WHERE o.customerName LIKE %:keyword% OR o.orderNo LIKE %:keyword% OR o.customerPhone LIKE %:keyword%")
