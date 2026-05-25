@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/xianbei_tea?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  jwt:
+    secret: xianbei-tea-secret-key-2026-very-long-secret-for-jwt-must-be-at-least-256-bits
+    expiration: 86400000
