@@ -33,7 +33,7 @@ ClaudeCodeProduct/
 ```bash
 cd backend
 mvn spring-boot:run
-# 默认端口 8080，MySQL 数据库 xianbei_tea
+# 默认端口 8099，MySQL 数据库 xianbei_tea
 ```
 
 ### 管理后台
@@ -41,7 +41,7 @@ mvn spring-boot:run
 cd frontend
 npm install
 npm run dev
-# 默认端口 3000
+# 默认端口 3099
 ```
 
 ### 顾客手机端
@@ -49,7 +49,7 @@ npm run dev
 cd customer-app
 npm install
 npm run dev
-# 默认端口 3001
+# 默认端口 3098
 ```
 
 ## 技术栈
@@ -71,6 +71,8 @@ npm run dev
 B站完整演示视频地址：https://www.bilibili.com/video/BV1dzGn6JEtV/?spm_id_from=333.1387.upload.video_card.click&vd_source=c86e016ce068b5cd234d2f1f79e88091
 
 用户端功能界面：
+
+
 <img width="449" height="820" alt="注册页面" src="https://github.com/user-attachments/assets/16520ae4-f263-4d09-bf17-022cf24b0e80" />
 <img width="460" height="820" alt="用户主页编辑" src="https://github.com/user-attachments/assets/54b55142-b960-419c-97b2-021a30593888" />
 <img width="464" height="818" alt="选择奶茶页面" src="https://github.com/user-attachments/assets/74205e49-15a7-4393-9f2b-05144237c3ac" />
@@ -83,6 +85,8 @@ B站完整演示视频地址：https://www.bilibili.com/video/BV1dzGn6JEtV/?spm_
 <img width="449" height="820" alt="登录页面" src="https://github.com/user-attachments/assets/eeacc569-8e60-497a-b7eb-2a9b6dc01b4b" />
 
 员工与店长功能界面：
+
+
 <img width="1920" height="920" alt="店长与员工登录页面" src="https://github.com/user-attachments/assets/cca6e359-e1fe-4ed1-8f63-88cf715a2db3" />
 <img width="1920" height="920" alt="用户管理" src="https://github.com/user-attachments/assets/de391b4a-c072-4414-a5a0-1d9da1bf7887" />
 <img width="1920" height="920" alt="员工管理" src="https://github.com/user-attachments/assets/6403aa58-1cb6-48ec-ba5f-94b7070b06c5" />
