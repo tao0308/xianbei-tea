@@ -67,3 +67,5 @@ npm run dev
 - `subagent-driven-development` → 多子 Agent 并行
 - `systematic-debugging` → 根因分析调试
 - `ui-styling` → 设计系统精调
+
+B站完整演示视频地址：https://www.bilibili.com/video/BV1dzGn6JEtV/?spm_id_from=333.1387.upload.video_card.click&vd_source=c86e016ce068b5cd234d2f1f79e88091
