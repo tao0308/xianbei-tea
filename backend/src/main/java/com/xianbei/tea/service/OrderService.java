@@ -5,6 +5,7 @@ import com.xianbei.tea.dto.CreateOrderRequest;
 import com.xianbei.tea.dto.OrderItemRequest;
 import com.xianbei.tea.entity.*;
 import com.xianbei.tea.repository.*;
+import com.xianbei.tea.service.OrderEventService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
@@ -17,14 +18,17 @@ public class OrderService {
     private final ProductRepository productRepository;
     private final AddonRepository addonRepository;
     private final InventoryRepository inventoryRepository;
+    private final OrderEventService orderEventService;
 
     public OrderService(OrderRepository orderRepository, ProductRepository productRepository,
                         AddonRepository addonRepository,
-                        InventoryRepository inventoryRepository) {
+                        InventoryRepository inventoryRepository,
+                        OrderEventService orderEventService) {
         this.orderRepository = orderRepository;
         this.productRepository = productRepository;
         this.addonRepository = addonRepository;
         this.inventoryRepository = inventoryRepository;
+        this.orderEventService = orderEventService;
     }
 
     public Result<List<Order>> list(String status) {
@@ -64,6 +68,7 @@ public class OrderService {
         Order order = opt.get();
         order.setStatus(status);
         orderRepository.save(order);
+        orderEventService.notifyNewOrder(order.getOrderNo());
         String statusText = switch (status) {
             case "MAKING" -> "开始制作";
             case "DONE" -> "制作完成";
@@ -135,6 +140,7 @@ public class OrderService {
         order.setTotalPrice(itemsTotal.add(order.getDeliveryFee()));
         order.setItems(items);
         orderRepository.save(order);
+        orderEventService.notifyNewOrder(order.getOrderNo());
 
         // 库存扣减
         deductInventoryForAddons(req.getItems());

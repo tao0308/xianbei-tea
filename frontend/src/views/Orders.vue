@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="fade-in">
     <el-card class="page-card">
       <div class="page-header">
@@ -117,12 +117,12 @@ onMounted(fetchList)
 .status-tabs { margin-bottom: 16px; }
 
 .order-card {
-  background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 16px; margin-bottom: 12px;
+  background: #fff; border: 1px solid #E7E5E4; border-radius: 10px; padding: 16px; margin-bottom: 12px;
   transition: box-shadow 0.2s;
 }
 .order-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
 .order-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.order-no { font-size: 22px; font-weight: 700; color: #C8925C; letter-spacing: 1px; }
+.order-no { font-size: 16px; font-weight: 600; color: var(--brand);; }
 .order-customer { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
 .order-phone { font-size: 13px; color: #999; margin-left: 8px; }
 .order-time { font-size: 12px; color: #999; margin-left: 12px; }

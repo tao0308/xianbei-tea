@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="fade-in">
     <el-card class="page-card">
       <div class="page-header">
@@ -12,7 +12,7 @@
       <el-table :data="list" border stripe v-loading="loading" style="width: 100%">
         <el-table-column label="图片" width="120" align="center">
           <template #default="{ row }">
-            <img v-if="row.imageUrl" :src="row.imageUrl" style="width:80px;height:45px;object-fit:cover;border-radius:4px;background:#f5f5f5" />
+            <img v-if="row.imageUrl" :src="row.imageUrl" style="width:80px;height:45px;object-fit:cover;border-radius:4px;background: #F8F6F3" />
             <el-tag v-else size="small" type="info">无图片</el-tag>
           </template>
         </el-table-column>
@@ -68,7 +68,7 @@
         <el-form-item v-else label="图片URL">
           <el-input v-model="dialog.form.imageUrl" placeholder="图片地址" />
           <div v-if="dialog.form.imageUrl" style="margin-top:8px">
-            <img :src="dialog.form.imageUrl" style="max-width:200px;max-height:100px;border-radius:4px;border:1px solid #eee" />
+            <img :src="dialog.form.imageUrl" style="max-width:200px;max-height:100px;border-radius:4px;border: 1px solid #E7E5E4" />
           </div>
         </el-form-item>
 
@@ -199,7 +199,7 @@ onMounted(fetchList)
 
 /* 批量图片预览 */
 .batch-preview { display:flex;flex-wrap:wrap;gap:8px;margin-top:10px; }
-.preview-item { position:relative;width:64px;height:64px;border-radius:6px;overflow:hidden;border:1px solid #eee; }
+.preview-item { position:relative;width:64px;height:64px;border-radius:6px;overflow:hidden;border: 1px solid #E7E5E4; }
 .preview-item img { width:100%;height:100%;object-fit:cover; }
 .preview-num {
   position:absolute;top:2px;right:2px;

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="fade-in">
     <!-- 库存概览 -->
     <el-row :gutter="16" style="margin-bottom:16px">

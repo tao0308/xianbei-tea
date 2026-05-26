@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="fade-in">
     <el-card class="page-card">
       <div class="page-header">
@@ -12,7 +12,7 @@
       <el-table :data="list" border stripe v-loading="loading" style="width: 100%">
         <el-table-column label="图片" width="80" align="center">
           <template #default="{ row }">
-            <img v-if="row.imageUrl" :src="row.imageUrl" style="width:50px;height:50px;object-fit:cover;border-radius:6px;background:#f5f5f5" />
+            <img v-if="row.imageUrl" :src="row.imageUrl" style="width:50px;height:50px;object-fit:cover;border-radius:6px;background: #F8F6F3" />
             <div v-else style="width:50px;height:50px;border-radius:6px;background:#FDF6EE;display:flex;align-items:center;justify-content:center;font-size:18px">🧋</div>
           </template>
         </el-table-column>
@@ -53,7 +53,7 @@
         <el-form-item label="图片">
           <el-input v-model="dialog.form.imageUrl" placeholder="图片 URL（可选）" />
           <div v-if="dialog.form.imageUrl" style="margin-top:6px">
-            <img :src="dialog.form.imageUrl" style="max-width:180px;max-height:80px;border-radius:4px;border:1px solid #eee" />
+            <img :src="dialog.form.imageUrl" style="max-width:180px;max-height:80px;border-radius:4px;border: 1px solid #E7E5E4" />
           </div>
         </el-form-item>
         <el-form-item label="套餐价" prop="price" :rules="[{ required: true, message: '请输入价格' }]">

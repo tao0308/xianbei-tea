@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="fade-in">
     <el-card class="page-card">
       <div class="page-header">
@@ -27,7 +27,7 @@
               fit="cover"
             >
               <template #error>
-                <div style="width:44px;height:44px;border-radius:6px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:10px;color:#bbb;line-height:1.2;text-align:center">加载<br/>失败</div>
+                <div style="width:44px;height:44px;border-radius:6px;background: #F8F6F3;display:flex;align-items:center;justify-content:center;font-size:10px;color:#bbb;line-height:1.2;text-align:center">加载<br/>失败</div>
               </template>
             </el-image>
             <div v-else style="width:44px;height:44px;border-radius:6px;background:#FDF6EE;display:flex;align-items:center;justify-content:center;font-size:18px;color:#C8925C">🧋</div>
@@ -94,7 +94,7 @@
         <el-form-item label="图片" prop="imageUrl">
           <el-input v-model="dialog.form.imageUrl" placeholder="图片URL地址（可选）" />
           <div v-if="dialog.form.imageUrl" style="margin-top:8px">
-            <img :src="dialog.form.imageUrl" style="max-width:180px;max-height:100px;border-radius:6px;border:1px solid #eee;object-fit:cover" @error="$event.target.style.display='none'" />
+            <img :src="dialog.form.imageUrl" style="max-width:180px;max-height:100px;border-radius:6px;border: 1px solid #E7E5E4;object-fit:cover" @error="$event.target.style.display='none'" />
           </div>
         </el-form-item>
       </el-form>

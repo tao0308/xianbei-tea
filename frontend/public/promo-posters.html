@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仙贝奶茶店 - 宣传图</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #1a1a2e;
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.poster {
+  width: 800px;
+  height: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* ====== 图1: 店面场景 ====== */
+.poster-store {
+  background: linear-gradient(180deg, #2C1810 0%, #5C3A28 30%, #8B6914 60%, #C8925C 100%);
+}
+.store-gradient {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 120%, rgba(200,146,92,0.6) 0%, transparent 60%);
+}
+.store-moon {
+  position: absolute; top: 40px; right: 80px; width: 60px; height: 60px;
+  border-radius: 50%; background: #F5E6D0; box-shadow: 0 0 30px rgba(245,230,208,0.3);
+}
+.store-building {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 320px;
+  background: linear-gradient(180deg, #3D2B1F 0%, #2C1810 100%);
+  border-radius: 12px 12px 0 0;
+}
+.store-roof {
+  position: absolute; bottom: 310px; left: 50%; transform: translateX(-50%);
+  width: 540px; height: 40px; background: #C8925C; border-radius: 8px 8px 0 0;
+}
+.store-roof::after {
+  content: ''; position: absolute; bottom: -12px; left: 0; right: 0; height: 12px;
+  background: repeating-linear-gradient(90deg, transparent, transparent 20px, #A6703E 20px, #A6703E 22px);
+}
+.store-sign {
+  position: absolute; top: -70px; left: 50%; transform: translateX(-50%);
+  background: #C8925C; color: #fff; padding: 14px 40px; border-radius: 8px;
+  font-size: 28px; font-weight: 700; letter-spacing: 6px;
+  box-shadow: 0 4px 20px rgba(200,146,92,0.4);
+}
+.store-window {
+  position: absolute; top: 30px; width: 100px; height: 120px;
+  background: rgba(245,230,208,0.25); border: 2px solid #C8925C; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.store-window-left { left: 40px; }
+.store-window-right { right: 40px; }
+.store-window-pane { width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255,200,120,0.3), rgba(255,180,100,0.1)); }
+.store-door {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 180px; background: rgba(200,146,92,0.2);
+  border: 2px solid #C8925C; border-bottom: none; border-radius: 8px 8px 0 0;
+}
+.store-door-handle { position: absolute; right: 16px; top: 50%; width: 6px; height: 30px; background: #C8925C; border-radius: 3px; }
+.store-lantern {
+  position: absolute; top: -50px; width: 30px; height: 40px;
+  background: linear-gradient(180deg, #E85D3A, #C0392B); border-radius: 50%;
+  box-shadow: 0 0 20px rgba(232,93,58,0.5);
+}
+.store-lantern::before {
+  content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+  width: 16px; height: 8px; background: #C8925C; border-radius: 2px;
+}
+.store-lantern-left { left: 30px; }
+.store-lantern-right { right: 30px; }
+.store-ground { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(180deg, #5C3A28, #2C1810); }
+.store-path {
+  position: absolute; bottom: 0; left: 30%; right: 30%; height: 40px;
+  background: rgba(200,146,92,0.2); border-radius: 40px 40px 0 0;
+}
+.store-tagline {
+  position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%);
+  color: #F5E6D0; font-size: 18px; letter-spacing: 4px; opacity: 0.8;
+}
+
+/* ====== 图2: 饮品特写 ====== */
+.poster-drink {
+  background: linear-gradient(135deg, #1C2536 0%, #2C3E50 40%, #1C2536 100%);
+}
+.drink-spotlight {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(200,146,92,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.drink-cup { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.drink-cup-body {
+  width: 140px; height: 200px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 20px 20px 30px 30px;
+  position: relative; overflow: hidden;
+}
+.drink-cup-liquid {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 80%;
+  background: linear-gradient(180deg, #DFB484 0%, #C8925C 40%, #8B6914 100%);
+  border-radius: 0 0 30px 30px;
+}
+.drink-cup-foam {
+  position: absolute; top: 36px; left: -10px; right: -10px; height: 20px;
+  background: linear-gradient(180deg, #F5E6D0, #DFB484); border-radius: 10px;
+}
+.drink-cup-boba {
+  position: absolute; bottom: 20px; left: 30px; width: 16px; height: 16px;
+  background: #3D2B1F; border-radius: 50%;
+  box-shadow: 30px 5px 0 #3D2B1F, 60px -8px 0 #3D2B1F, 15px 20px 0 #3D2B1F, 50px 25px 0 #3D2B1F;
+}
+.drink-cup-ice {
+  position: absolute; top: 50px; left: 25px; width: 24px; height: 24px;
+  background: rgba(255,255,255,0.2); border-radius: 4px;
+  box-shadow: 60px 8px 0 rgba(255,255,255,0.15), 90px -5px 0 rgba(255,255,255,0.1);
+}
+.drink-steam-left {
+  position: absolute; top: -20px; left: 10px; width: 30px; height: 40px;
+  background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.15), transparent);
+  border-radius: 50%; animation: steam 3s ease-in-out infinite;
+}
+.drink-steam-right {
+  position: absolute; top: -30px; right: 10px; width: 24px; height: 50px;
+  background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.1), transparent);
+  border-radius: 50%; animation: steam 3.5s ease-in-out infinite 0.5s;
+}
+@keyframes steam {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50% { transform: translateY(-15px) scale(1.3); opacity: 0.15; }
+}
+.drink-name {
+  position: absolute; bottom: 140px; left: 50%; transform: translateX(-50%);
+  color: #DFB484; font-size: 32px; font-weight: 700; letter-spacing: 8px;
+  text-shadow: 0 2px 10px rgba(200,146,92,0.3);
+}
+.drink-desc {
+  position: absolute; bottom: 110px; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.5); font-size: 14px; letter-spacing: 4px;
+}
+.drink-particles { position: absolute; inset: 0; overflow: hidden; }
+.drink-particle {
+  position: absolute; width: 4px; height: 4px; background: rgba(200,146,92,0.3);
+  border-radius: 50%; animation: float 6s ease-in-out infinite;
+}
+.drink-particle:nth-child(1) { top: 30%; left: 20%; }
+.drink-particle:nth-child(2) { top: 50%; left: 75%; animation-delay: 1s; }
+.drink-particle:nth-child(3) { top: 70%; left: 15%; animation-delay: 2s; }
+.drink-particle:nth-child(4) { top: 25%; left: 65%; animation-delay: 3s; }
+.drink-particle:nth-child(5) { top: 60%; left: 40%; animation-delay: 4s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-30px); opacity: 0.6; }
+}
+
+/* ====== 图3: 促销海报 ====== */
+.poster-promo {
+  background: linear-gradient(135deg, #C8925C 0%, #A6703E 30%, #8B6914 70%, #5C3A28 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.promo-pattern {
+  position: absolute; inset: 0; opacity: 0.05;
+  background-image:
+    radial-gradient(circle at 20% 50%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 80% 30%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 60% 20%, #fff 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.promo-ring {
+  width: 280px; height: 280px; border: 3px solid rgba(255,255,255,0.2);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 1;
+}
+.promo-ring::before {
+  content: ''; position: absolute; inset: 20px;
+  border: 2px dashed rgba(255,255,255,0.15); border-radius: 50%;
+}
+.promo-badge { text-align: center; color: #fff; }
+.promo-badge .new {
+  font-size: 72px; font-weight: 900; line-height: 1; letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.promo-badge .season { font-size: 24px; letter-spacing: 8px; margin-top: 4px; opacity: 0.9; }
+.promo-badge .sub { font-size: 14px; letter-spacing: 4px; margin-top: 8px; opacity: 0.7; }
+.promo-title {
+  position: relative; z-index: 1; margin-top: 30px; color: #fff;
+  font-size: 36px; font-weight: 700; letter-spacing: 10px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.promo-price { position: relative; z-index: 1; margin-top: 12px; color: #F5E6D0; font-size: 20px; letter-spacing: 4px; }
+.promo-price .num { font-size: 48px; font-weight: 900; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.4); }
+.promo-footer {
+  position: relative; z-index: 1; margin-top: 20px;
+  color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: 4px;
+}
+.promo-cta {
+  position: relative; z-index: 1; margin-top: 16px; background: #fff;
+  color: #C8925C; padding: 12px 40px; border-radius: 30px;
+  font-size: 16px; font-weight: 600; letter-spacing: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.promo-leaves { position: absolute; inset: 0; overflow: hidden; }
+.promo-leaf {
+  position: absolute; width: 60px; height: 80px; border-radius: 0 60px 0 60px;
+  background: rgba(255,255,255,0.06); transform: rotate(-30deg);
+}
+.promo-leaf:nth-child(1) { top: 10%; left: 5%; }
+.promo-leaf:nth-child(2) { top: 60%; right: 5%; transform: rotate(150deg); }
+.promo-leaf:nth-child(3) { top: 30%; right: 15%; transform: rotate(45deg); width: 40px; height: 55px; }
+.promo-leaf:nth-child(4) { bottom: 20%; left: 12%; transform: rotate(-60deg); width: 50px; height: 65px; }
+
+@media (max-width: 840px) {
+  .poster { width: 100%; height: auto; aspect-ratio: 4/3; }
+}
+</style>
+</head>
+<body>
+
+<div class="poster poster-store">
+  <div class="store-gradient"></div>
+  <div class="store-moon"></div>
+  <div class="store-building">
+    <div class="store-sign">仙贝奶茶店</div>
+    <div class="store-lantern store-lantern-left"></div>
+    <div class="store-lantern store-lantern-right"></div>
+    <div class="store-window store-window-left"><div class="store-window-pane"></div></div>
+    <div class="store-window store-window-right"><div class="store-window-pane"></div></div>
+    <div class="store-door"><div class="store-door-handle"></div></div>
+  </div>
+  <div class="store-roof"></div>
+  <div class="store-ground"><div class="store-path"></div></div>
+  <div class="store-tagline">一杯好茶 温暖时光</div>
+</div>
+
+<div class="poster poster-drink">
+  <div class="drink-spotlight"></div>
+  <div class="drink-particles">
+    <div class="drink-particle"></div><div class="drink-particle"></div><div class="drink-particle"></div>
+    <div class="drink-particle"></div><div class="drink-particle"></div>
+  </div>
+  <div class="drink-name">仙贝招牌奶茶</div>
+  <div class="drink-desc">SIGNATURE MILK TEA</div>
+  <div class="drink-cup">
+    <div class="drink-steam-left"></div>
+    <div class="drink-steam-right"></div>
+    <div class="drink-cup-body">
+      <div class="drink-cup-liquid">
+        <div class="drink-cup-foam"></div>
+        <div class="drink-cup-boba"></div>
+        <div class="drink-cup-ice"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="poster poster-promo">
+  <div class="promo-pattern"></div>
+  <div class="promo-leaves">
+    <div class="promo-leaf"></div><div class="promo-leaf"></div>
+    <div class="promo-leaf"></div><div class="promo-leaf"></div>
+  </div>
+  <div class="promo-ring">
+    <div class="promo-badge">
+      <div class="new">新品</div>
+      <div class="season">春日限定</div>
+      <div class="sub">SPRING SPECIAL</div>
+    </div>
+  </div>
+  <div class="promo-title">樱花草莓鲜奶茶</div>
+  <div class="promo-price">限时特价 <span class="num">15</span> 元/杯</div>
+  <div class="promo-footer">仙贝奶茶店 每一杯都是新鲜现制</div>
+  <div class="promo-cta">立即下单</div>
+</div>
+
+</body>
+</html>
